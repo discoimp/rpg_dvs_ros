@@ -36,10 +36,6 @@ If you use this work in an academic context, please cite the following publicati
 
 # Driver Installation
 
-NOTE: substitute any mention of kinetic in the following instruction with the name of your current ROS distribution.
-First let's set the distro of ROS you are using.
-If you are using noetic define this variable:
-*   `export ROS_DISTRO=noetic`
 1. Install ROS dependencies:
 *   `$ sudo apt-get install ros-$ROS_DISTRO-camera-info-manager`
 *   `$ sudo apt-get install ros-$ROS_DISTRO-image-view`
