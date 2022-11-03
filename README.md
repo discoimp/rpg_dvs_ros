@@ -33,10 +33,12 @@ If you use this work in an academic context, please cite the following publicati
 # Driver Installation
 
 NOTE: substitute any mention of kinetic in the following instruction with the name of your current ROS distribution.
-
+First let's set the distro of ROS you are using.
+If you are using noetic define this variable:
+*   `export ROS_DISTRO=noetic`
 1. Install ROS dependencies:
-*   `$ sudo apt-get install ros-kinetic-camera-info-manager`
-*   `$ sudo apt-get install ros-kinetic-image-view`
+*   `$ sudo apt-get install ros-$ROS_DISTRO-camera-info-manager`
+*   `$ sudo apt-get install ros-$ROS_DISTRO-image-view`
 
 2. Install libcaer (add required repositories as per [iniVation documentation](https://inivation.gitlab.io/dv/dv-docs/docs/getting-started.html#ubuntu-linux) first):
 *   `$ sudo apt-get install libcaer-dev`
@@ -48,7 +50,7 @@ NOTE: substitute any mention of kinetic in the following instruction with the na
 *   `$ cd`
 *   `$ mkdir -p catkin_ws/src`
 *   `$ cd catkin_ws`
-*   `$ catkin config --init --mkdirs --extend /opt/ros/kinetic --merge-devel --cmake-args -DCMAKE_BUILD_TYPE=Release`
+*   `$ catkin config --init --mkdirs --extend /opt/ros/$ROS_DISTRO --merge-devel --cmake-args -DCMAKE_BUILD_TYPE=Release`
 
 5. Clone the `catkin_simple` package (https://github.com/catkin/catkin_simple), which will be used to build the DVS/DAVIS driver packages:
 *   `$ cd ~/catkin_ws/src`
