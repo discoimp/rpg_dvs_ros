@@ -1,4 +1,5 @@
-This edit was initiated november 2022 to accomodate for upstream changes breaking this build on Ubuntu 20.04
+This edit was initiated november 2022 to accomodate for upstream changes breaking this build on Ubuntu 20.04.
+Updating list as I find them: Catkin this issue: [catkin build noetic 20.04] (https://answers.ros.org/question/353113/catkin-build-in-ubuntu-2004-noetic/)
 
 
 
