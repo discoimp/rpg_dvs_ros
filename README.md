@@ -1,3 +1,7 @@
+This edit was initiated november 2022 to accomodate for upstream changes breaking this build on Ubuntu 20.04
+
+
+
 rpg_dvs_ros
 ===========
 
