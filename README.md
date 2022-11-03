@@ -45,6 +45,15 @@ If you use this work in an academic context, please cite the following publicati
 
 3. Install catkin tools:
 *   `sudo apt install python3-catkin-tools python3-osrf-pycommon`
+Continue, but if catkin config doesn't work come back here and run:
+
+*   `sudo apt install python3-pip`
+*   `sudo pip3 install --upgrade setuptools`
+*   `sudo pip3 install -U rosdep rosinstall_generator vcstool`
+*   `sudo pip3 install testresources`
+*   `pip3 check`
+This last command will check dependencies. Install any missing.
+
 
 4. Create a catkin workspace (if you have not done it yet):
 *   `$ cd`
