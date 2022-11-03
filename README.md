@@ -44,7 +44,7 @@ If you are using noetic define this variable:
 *   `$ sudo apt-get install libcaer-dev`
 
 3. Install catkin tools:
-*   `$ sudo apt-get install python-catkin-tools`
+*   `sudo apt install python3-catkin-tools python3-osrf-pycommon`
 
 4. Create a catkin workspace (if you have not done it yet):
 *   `$ cd`
