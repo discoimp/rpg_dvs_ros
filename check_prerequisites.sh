@@ -69,13 +69,13 @@ source $HOME/catkin_ws/devel/setup.bash
 
 # Clone the rpg_dvs_ros package
 if [ ! -d "rpg_dvs_ros" ]; then
-    cd catkin_ws
+    cd $HOME/catkin_ws
     git clone https://github.com/discoimp/rpg_dvs_ros.git
 fi
 
 # Clone the catkin_simple package if not already there
 if [ ! -d "catkin_simple" ]; then
-    cd catkin_ws
+    cd $HOME/catkin_ws
     git clone https://github.com/catkin/catkin_simple.git
 fi
 
