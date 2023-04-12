@@ -54,6 +54,9 @@ if ! dpkg -s "python3-osrf-pycommon" >/dev/null 2>&1; then
 fi
 
 echo "All dependencies met"
+chmod +x /tmp/install_event_driver.sh
+echo "To build your workspace run (without sudo)"
+echo "/tmp/install_event_driver.sh"
 
 # Check if catkin workspace is already initialized
 echo "Checking catkin workspace..."
