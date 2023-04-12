@@ -37,6 +37,17 @@ If you use this work in an academic context, please cite the following publicati
 
 # Driver Installation
 
+0. If you already have a catkin workspace and cloned this repo to it:
+```
+# mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+# git clone https://github.com/discoimp/rpg_dvs_ros.git
+cd rpg_dvs_ros
+chmod +x check_prerequesites.sh
+./check_prerequisites.sh
+```
+This will check what packages are missing (I guess)
+
 1. Install ROS dependencies:
 *   `$ sudo apt-get install ros-$ROS_DISTRO-camera-info-manager`
 *   `$ sudo apt-get install ros-$ROS_DISTRO-image-view`
