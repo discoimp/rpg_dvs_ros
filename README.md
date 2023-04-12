@@ -4,20 +4,25 @@ Updating list as I find them: Catkin this issue: [catkin build noetic 20.04] (ht
 See [uzh-rpg](https://github.com/uzh-rpg/rpg_dvs_ros) for original README
 
 
+### Driver Installation ( ROS
 
-# Driver Installation
+0. semi automated (if successful please feel lucky and jump to 8.3 to launch the test):
+```
+# basic tools
+sudo apt-get update && sudo apt-get install git curl -y
+```
+```
+# Download the script to /tmp directory
+curl -o /tmp/check_prerequisites.sh https://raw.githubusercontent.com/discoimp/rpg_dvs_ros/06d9636a1dcbc923e1cc19969b6da936e5fc862e/check_prerequesites.sh
 
-0. semi automated (for fun):
+# Make the script executable
+chmod +x /tmp/check_prerequisites.sh
+
+# Run the script with sudo
+sudo /tmp/check_prerequisites.sh
+
 ```
-# sudo apt-get update && sudo apt-get install git -y
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
-git clone https://github.com/discoimp/rpg_dvs_ros.git
-cd rpg_dvs_ros
-chmod +x check_prerequesites.sh
-sudo ./check_prerequisites.sh
-```
-This will check what packages are missing (I guess)
+In the likely event this was unsuccessful follow the steps below and look for missing dependencies.
 
 1. Install ROS dependencies:
 *   `$ sudo apt-get install ros-$ROS_DISTRO-camera-info-manager`
