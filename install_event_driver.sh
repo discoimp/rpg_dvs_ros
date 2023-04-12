@@ -14,7 +14,7 @@ if [ ! -f $HOME/catkin_ws/CMakeLists.txt ]; then
     mkdir -p $HOME/catkin_ws/src
     cd $HOME/catkin_ws
     catkin config --init --mkdirs --extend /opt/ros/$ROS_DISTRO --merge-devel --cmake-args -DCMAKE_BUILD_TYPE=Release
-    catkin_create_pkg interface std_msgs rospy roscpp sensor_msgs
+    # catkin_create_pkg interface std_msgs rospy roscpp sensor_msgs
 fi
 
 # Source the catkin workspace
@@ -45,17 +45,17 @@ case $choice in
     1)
         # Build DVS128 package
         cd $HOME/catkin_ws
-        catkin build dvs_ros_driver build dvs_renderer
+        catkin build dvs_ros_driver dvs_renderer
         ;;
     2)
         # Build DAVIS package
         cd $HOME/catkin_ws
-        catkin build davis_ros_driver build dvs_renderer
+        catkin build davis_ros_driver dvs_renderer
         ;;
     3)
         # Build DVXplorer package
         cd $HOME/catkin_ws
-        catkin build dvxplorer_ros_driver build dvs_renderer
+        catkin build dvxplorer_ros_driver dvs_renderer
         ;;
     *)
         echo "Invalid choice. Please enter a number between 1 and 3."
