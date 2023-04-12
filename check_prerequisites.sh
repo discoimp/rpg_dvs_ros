@@ -57,24 +57,25 @@ echo "All dependencies met"
 
 # Check if catkin workspace is already initialized
 echo "Checking catkin workspace..."
-if [ ! -f ~/catkin_ws/CMakeLists.txt ]; then
+if [ ! -f $HOME/catkin_ws/CMakeLists.txt ]; then
     # Initialize catkin workspace
-    cd ~
-    mkdir -p catkin_ws/src
-    cd catkin_ws
+    mkdir -p $HOME/catkin_ws/src
+    cd $HOME/catkin_ws
     catkin config --init --mkdirs --extend /opt/ros/$ROS_DISTRO --merge-devel --cmake-args -DCMAKE_BUILD_TYPE=Release
 fi
 
 # Source the catkin workspace
-source ~/catkin_ws/devel/setup.bash
+source $HOME/catkin_ws/devel/setup.bash
 
 # Clone the rpg_dvs_ros package
 if [ ! -d "rpg_dvs_ros" ]; then
-    git clone https://github.com/uzh-rpg/rpg_dvs_ros.git
+    cd catkin_ws
+    git clone https://github.com/discoimp/rpg_dvs_ros.git
 fi
 
 # Clone the catkin_simple package if not already there
 if [ ! -d "catkin_simple" ]; then
+    cd catkin_ws
     git clone https://github.com/catkin/catkin_simple.git
 fi
 
@@ -90,17 +91,17 @@ read -p "Enter camera type (1-3): " choice
 case $choice in
     1)
         # Build DVS128 package
-        cd ~/catkin_ws
+        cd $HOME/catkin_ws
         catkin build dvs_ros_driver build dvs_renderer
         ;;
     2)
         # Build DAVIS package
-        cd ~/catkin_ws
+        cd $HOME/catkin_ws
         catkin build davis_ros_driver build dvs_renderer
         ;;
     3)
         # Build DVXplorer package
-        cd ~/catkin_ws
+        cd $HOME/catkin_ws
         catkin build dvxplorer_ros_driver build dvs_renderer
         ;;
     *)
@@ -108,5 +109,5 @@ case $choice in
         ;;
 esac
 # catkin build dvs_renderer
-source ~/catkin_ws/devel/setup.bash
+source $HOME/catkin_ws/devel/setup.bash
 
