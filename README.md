@@ -44,7 +44,7 @@ cd ~/catkin_ws/src
 # git clone https://github.com/discoimp/rpg_dvs_ros.git
 cd rpg_dvs_ros
 chmod +x check_prerequesites.sh
-./check_prerequisites.sh
+sudo ./check_prerequisites.sh
 ```
 This will check what packages are missing (I guess)
 
@@ -53,6 +53,9 @@ This will check what packages are missing (I guess)
 *   `$ sudo apt-get install ros-$ROS_DISTRO-image-view`
 
 2. Install libcaer (add required repositories as per [iniVation documentation](https://inivation.gitlab.io/dv/dv-docs/docs/getting-started.html#ubuntu-linux) first):
+```
+sudo add-apt-repository ppa:inivation-ppa/inivation
+```
 *   `$ sudo apt-get install libcaer-dev`
 
 3. Install catkin tools:
