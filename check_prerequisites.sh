@@ -79,7 +79,6 @@ if [ ! -d "catkin_simple" ]; then
 fi
 
 # Build the relevant camera driver
-cd ~/catkin_ws
 
 # Prompt user to select camera type
 echo "Select a camera type to build:"
@@ -91,14 +90,17 @@ read -p "Enter camera type (1-3): " choice
 case $choice in
     1)
         # Build DVS128 package
+        cd ~/catkin_ws
         catkin build dvs_ros_driver build dvs_renderer
         ;;
     2)
         # Build DAVIS package
+        cd ~/catkin_ws
         catkin build davis_ros_driver build dvs_renderer
         ;;
     3)
         # Build DVXplorer package
+        cd ~/catkin_ws
         catkin build dvxplorer_ros_driver build dvs_renderer
         ;;
     *)
