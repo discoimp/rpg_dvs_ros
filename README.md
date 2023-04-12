@@ -6,7 +6,7 @@ See [uzh-rpg](https://github.com/uzh-rpg/rpg_dvs_ros) for original README
 
 ### Driver Installation (tested on Ubuntu 20.04.5 w/ ROS Noetic)
 
-0. semi automated (if successful please feel lucky and jump to 8.3 to launch the test):
+0. Automated
 ```
 # basic tools
 sudo apt-get update && sudo apt-get install git curl -y
@@ -17,12 +17,16 @@ curl -o /tmp/check_prerequisites.sh https://raw.githubusercontent.com/discoimp/r
 
 # Make the script executable
 chmod +x /tmp/check_prerequisites.sh
-
-# Run the script with sudo
-sudo /tmp/check_prerequisites.sh
-
 ```
-In the likely event this was unsuccessful follow the steps below and look for missing dependencies.
+Run the script with sudo
+(never inspect a script prior to running it with sudo)
+```
+sudo /tmp/check_prerequisites.sh
+```
+
+In the unlikely event this was successful jump to 8.3 and launch the test
+
+else continue
 
 1. Install ROS dependencies:
 *   `$ sudo apt-get install ros-$ROS_DISTRO-camera-info-manager`
@@ -58,9 +62,9 @@ This last command will check dependencies. Install any missing.
 *   `$ cd ~/catkin_ws/src`
 *   `$ git clone https://github.com/catkin/catkin_simple.git`
 
-6. Clone this repository:
+6. Clone the original repository (for now):
 *   `$ cd ~/catkin_ws/src`
-*   `$ git clone https://github.com/discoimp/rpg_dvs_ros.git`
+*   `$ git clone https://github.com/uzh-rpg/rpg_dvs_ros.git`
 
 7. Build the packages:
 * `$ catkin build dvs_ros_driver`  (if you are using the DVS128)
