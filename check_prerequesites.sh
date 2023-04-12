@@ -14,10 +14,9 @@ if [ -z "$ROS_DISTRO" ]; then
     echo "is not set"
     echo "Please check your ROS installation or install manually."
     exit
-
-else
-    echo $ROS_DISTRO
 fi
+
+echo $ROS_DISTRO
 
 # Check ROS dependencies
 if ! dpkg -s "ros-$ROS_DISTRO-camera-info-manager" >/dev/null 2>&1; then
