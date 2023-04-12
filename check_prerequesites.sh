@@ -70,9 +70,10 @@ fi
 # Source the catkin workspace
 source ~/catkin_ws/devel/setup.bash
 
-# Download the DVS ROS driver
-cd ~/catkin_ws/src
-git clone https://github.com/discoimp/rpg_dvs_ros.git
+# Clone the rpg_dvs_ros package
+if [ ! -d "rpg_dvs_ros" ]; then
+    git clone https://github.com/uzh-rpg/rpg_dvs_ros.git
+fi
 
 # Clone the catkin_simple package if not already there
 if [ ! -d "catkin_simple" ]; then
@@ -92,20 +93,20 @@ read -p "Enter camera type (1-3): " choice
 case $choice in
     1)
         # Build DVS128 package
-        catkin build dvs_ros_driver
+        catkin build dvs_ros_driver build dvs_renderer
         ;;
     2)
         # Build DAVIS package
-        catkin build davis_ros_driver
+        catkin build davis_ros_driver build dvs_renderer
         ;;
     3)
         # Build DVXplorer package
-        catkin build dvxplorer_ros_driver
+        catkin build dvxplorer_ros_driver build dvs_renderer
         ;;
     *)
         echo "Invalid choice. Please enter a number between 1 and 3."
         ;;
 esac
-catkin build dvs_renderer
+# catkin build dvs_renderer
 source ~/catkin_ws/devel/setup.bash
 
