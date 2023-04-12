@@ -1,47 +1,18 @@
 This edit was initiated november 2022 to accomodate for upstream changes breaking this build on Ubuntu 20.04.
 Updating list as I find them: Catkin this issue: [catkin build noetic 20.04] (https://answers.ros.org/question/353113/catkin-build-in-ubuntu-2004-noetic/)
 
+See [uzh-rpg](https://github.com/uzh-rpg/rpg_dvs_ros) for original README
 
-
-rpg_dvs_ros
-===========
-
-# Disclaimer and License
-
-The RPG ROS DVS package is supported under ROS Kinetic (Ubuntu 16.04), ROS Melodic (Ubuntu 18.04) and ROS Noetic (Ubuntu 20.04).
-
-This is research code, expect that it changes often and any fitness for a particular purpose is disclaimed.
-
-The source code is released under the **MIT License**.
-
-
-# Package Overview
-
-The ROS DVS package provides C++ drivers for the [Dynamic Vision Sensors (DVS/DAVIS)](https://inivation.com/dvp/).
-Even if you do not have a DAVS or DAVIS device, you can still [use this driver to read pre-recorded event data files (see the example below)](#ExampleEventCameraDataset).
-The package also provides a calibration tool for both intrinsic and stereo calibration.
-To find out more about event cameras, visit the website of the [Institute of Neuroinformatics](http://siliconretina.ini.uzh.ch/wiki/index.php).
-The package is based on [libcaer](https://gitlab.com/inivation/libcaer/).
-
-Authors: Elias Mueggler, Basil Huber, Luca Longinotti, Tobi Delbruck
-
-
-## Publications
-
-If you use this work in an academic context, please cite the following publications:
-
-* E. Mueggler, B. Huber, D. Scaramuzza: **Event-based, 6-DOF Pose Tracking for High-Speed Maneuvers**. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Chicago, 2014. ([PDF](http://rpg.ifi.uzh.ch/docs/IROS14_Mueggler.pdf))
-* P. Lichtsteiner, C. Posch, T. Delbruck: **A 128×128 120dB 15us Latency Asynchronous Temporal Contrast Vision Sensor**. IEEE Journal of Solid State Circuits, Feb. 2008, 43(2), pp. 566-576. ([PDF](https://www.ini.uzh.ch/~tobi/wiki/lib/exe/fetch.php?media=lichtsteiner_dvs_jssc08.pdf))
-* C. Brandli, R. Berner, M. Yang, S. C. Liu and T. Delbruck: **A 240 × 180 130 dB 3 us Latency Global Shutter Spatiotemporal Vision Sensor**. IEEE Journal of Solid-State Circuits, Oct. 2014, 49(10), pp. 2333-2341. ([Link](ieeexplore.ieee.org/document/6889103))
 
 
 # Driver Installation
 
-0. If you already have a catkin workspace and cloned this repo to it:
+0. semi automated (for fun):
 ```
-# mkdir -p ~/catkin_ws/src
+# sudo apt-get update && sudo apt-get install git -y
+mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
-# git clone https://github.com/discoimp/rpg_dvs_ros.git
+git clone https://github.com/discoimp/rpg_dvs_ros.git
 cd rpg_dvs_ros
 chmod +x check_prerequesites.sh
 sudo ./check_prerequisites.sh
@@ -104,6 +75,10 @@ This last command will check dependencies. Install any missing.
 
         ![dvs_rendering_screenshot_19 04 2017](https://cloud.githubusercontent.com/assets/8024432/25172262/b96baaa0-24f0-11e7-9c3e-e33f6d398a4a.png)
 
+
+cherry pick from original README:
+
+
 9. **If you do not have a DAVIS, you can still use this driver to read recorded files**, such as those of [The Event Camera Dataset and Simulator](http://rpg.ifi.uzh.ch/davis_data.html).
    **Example**: <a name="ExampleEventCameraDataset"></a>
     1. Download a squence of the dataset, such as [slider_depth.bag](http://rpg.ifi.uzh.ch/datasets/davis/slider_depth.bag)
@@ -140,12 +115,34 @@ The format for the timestamps changed from uint64 to rostime.
 To convert an "old" bag file, use:
 `$ rosbag fix old.bag new.bag`.
 
-## Compiling error
 
-On Ubuntu 14.04 with GCC 4.8, you will receive an error about missing file (`stdatomic.h`).
-This is a [problem](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=58016) related to GCC 4.8 and can be resolved by [updating to version 4.9](http://askubuntu.com/a/581497/218846):
+rpg_dvs_ros
+===========
 
-    sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-    sudo apt-get update
-    sudo apt-get install gcc-4.9 g++-4.9
-    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
+# Disclaimer and License
+
+The RPG ROS DVS package is supported under ROS Kinetic (Ubuntu 16.04), ROS Melodic (Ubuntu 18.04) and ROS Noetic (Ubuntu 20.04).
+
+This is research code, expect that it changes often and any fitness for a particular purpose is disclaimed.
+
+The source code is released under the **MIT License**.
+
+
+# Package Overview
+
+The ROS DVS package provides C++ drivers for the [Dynamic Vision Sensors (DVS/DAVIS)](https://inivation.com/dvp/).
+Even if you do not have a DAVS or DAVIS device, you can still [use this driver to read pre-recorded event data files (see the example below)](#ExampleEventCameraDataset).
+The package also provides a calibration tool for both intrinsic and stereo calibration.
+To find out more about event cameras, visit the website of the [Institute of Neuroinformatics](http://siliconretina.ini.uzh.ch/wiki/index.php).
+The package is based on [libcaer](https://gitlab.com/inivation/libcaer/).
+
+Authors: Elias Mueggler, Basil Huber, Luca Longinotti, Tobi Delbruck
+
+
+## Publications
+
+If you use this work in an academic context, please cite the following publications:
+
+* E. Mueggler, B. Huber, D. Scaramuzza: **Event-based, 6-DOF Pose Tracking for High-Speed Maneuvers**. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Chicago, 2014. ([PDF](http://rpg.ifi.uzh.ch/docs/IROS14_Mueggler.pdf))
+* P. Lichtsteiner, C. Posch, T. Delbruck: **A 128×128 120dB 15us Latency Asynchronous Temporal Contrast Vision Sensor**. IEEE Journal of Solid State Circuits, Feb. 2008, 43(2), pp. 566-576. ([PDF](https://www.ini.uzh.ch/~tobi/wiki/lib/exe/fetch.php?media=lichtsteiner_dvs_jssc08.pdf))
+* C. Brandli, R. Berner, M. Yang, S. C. Liu and T. Delbruck: **A 240 × 180 130 dB 3 us Latency Global Shutter Spatiotemporal Vision Sensor**. IEEE Journal of Solid-State Circuits, Oct. 2014, 49(10), pp. 2333-2341. ([Link](ieeexplore.ieee.org/document/6889103))
