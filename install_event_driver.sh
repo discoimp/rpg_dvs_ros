@@ -14,6 +14,7 @@ if [ ! -f $HOME/catkin_ws/CMakeLists.txt ]; then
     mkdir -p $HOME/catkin_ws/src
     cd $HOME/catkin_ws
     catkin config --init --mkdirs --extend /opt/ros/$ROS_DISTRO --merge-devel --cmake-args -DCMAKE_BUILD_TYPE=Release
+    catkin build
 fi
 
 # Source the catkin workspace
