@@ -14,7 +14,6 @@ if [ -z "$ROS_DISTRO" ]; then
     echo "is not set"
     echo "Please check your ROS installation or install manually."
     exit
-fi
 
 else
     echo $ROS_DISTRO
