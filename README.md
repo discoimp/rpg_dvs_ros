@@ -4,7 +4,7 @@ Updating list as I find them: Catkin this issue: [catkin build noetic 20.04] (ht
 See [uzh-rpg](https://github.com/uzh-rpg/rpg_dvs_ros) for original README
 
 
-### Driver Installation ( ROS
+### Driver Installation (tested on Ubuntu 20.04.5 w/ ROS Noetic)
 
 0. semi automated (if successful please feel lucky and jump to 8.3 to launch the test):
 ```
@@ -60,7 +60,7 @@ This last command will check dependencies. Install any missing.
 
 6. Clone this repository:
 *   `$ cd ~/catkin_ws/src`
-*   `$ git clone https://github.com/uzh-rpg/rpg_dvs_ros.git`
+*   `$ git clone https://github.com/discoimp/rpg_dvs_ros.git`
 
 7. Build the packages:
 * `$ catkin build dvs_ros_driver`  (if you are using the DVS128)
