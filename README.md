@@ -19,10 +19,10 @@ curl -LO https://raw.githubusercontent.com/discoimp/rpg_dvs_ros/master/check_pre
 # Make the script executable
 chmod +x /tmp/check_prerequisites.sh
 ```
-Run the script with sudo
+Run the script with sudo -E (preserving env home)
 (never inspect a script prior to running it with sudo)
 ```
-sudo /tmp/check_prerequisites.sh
+sudo -E /tmp/check_prerequisites.sh
 ```
 
 In the unlikely event this was successful jump to 8.3 and launch the test
