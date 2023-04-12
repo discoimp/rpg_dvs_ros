@@ -13,8 +13,7 @@ sudo apt-get update && sudo apt-get install git curl -y
 ```
 ```
 # Download the script to /tmp directory
-curl -LO https://raw.githubusercontent.com/discoimp/rpg_dvs_ros/master/check_prerequisites.sh -o /tmp/check_prerequisites.sh
-
+curl -o /tmp/check_prerequisites.sh -LO https://raw.githubusercontent.com/discoimp/rpg_dvs_ros/master/check_prerequisites.sh
 
 # Make the script executable
 chmod +x /tmp/check_prerequisites.sh
