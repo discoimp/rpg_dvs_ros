@@ -8,11 +8,12 @@ See [uzh-rpg](https://github.com/uzh-rpg/rpg_dvs_ros) for original README
 
 0. Automated
 ```
-# basic tools
+# Install basic tools
 sudo apt-get update && sudo apt-get install git curl -y
 ```
+Download the scripts to the /tmp directory and make them executable
 ```
-# Download the scripts to the /tmp directory and make them executablecurl -o /tmp/install_event_driver.sh -LO https://raw.githubusercontent.com/discoimp/rpg_dvs_ros/master/install_event_driver.sh && curl -o /tmp/check_prerequisites.sh -LO https://raw.githubusercontent.com/discoimp/rpg_dvs_ros/master/check_prerequisites.sh && chmod +x /tmp/install_event_driver.sh /tmp/check_prerequisites.sh
+curl -o /tmp/install_event_driver.sh -LO https://raw.githubusercontent.com/discoimp/rpg_dvs_ros/master/install_event_driver.sh && curl -o /tmp/check_prerequisites.sh -LO https://raw.githubusercontent.com/discoimp/rpg_dvs_ros/master/check_prerequisites.sh && chmod +x /tmp/install_event_driver.sh /tmp/check_prerequisites.sh
 
 ```
 Run the script with sudo -E (preserving env home)
