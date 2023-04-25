@@ -17,9 +17,10 @@ curl -o /tmp/install_event_driver.sh -LO https://raw.githubusercontent.com/disco
 
 ```
 Run the script with sudo -E (preserving env home)
-(never inspect a script prior to running it with sudo)
+(never inspect a script prior to running it with sudo...)
 ```
 sudo -E /tmp/check_prerequisites.sh
+/tmp/install_event_driver.sh
 ```
 
 In the unlikely event this was successful jump to 8.3 and launch the test
