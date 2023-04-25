@@ -63,3 +63,7 @@ case $choice in
 esac
 # catkin build dvs_renderer
 source $HOME/catkin_ws/devel/setup.bash
+
+echo "catkin_ws sourced"
+echo "To automatically source run this:"
+echo -e "echo \"source ~/catkin_ws/devel/setup.bash\" >> .bashrc"
