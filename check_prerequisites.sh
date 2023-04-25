@@ -12,7 +12,8 @@ echo -n "ROS distro: "
 # -z is true if the string is empty
 if [ -z "$ROS_DISTRO" ]; then
     echo "is not set"
-    echo "Please check your ROS installation or install manually."
+    echo "Please check your ROS installation or install manually:"
+    echo "http://wiki.ros.org/noetic/Installation/Ubuntu"
     exit
 fi
 
@@ -54,6 +55,7 @@ if ! dpkg -s "python3-osrf-pycommon" >/dev/null 2>&1; then
 fi
 
 echo "All dependencies met"
+curl -o /tmp/install_event_driver.sh -LO https://raw.githubusercontent.com/discoimp/rpg_dvs_ros/blob/master/install_event_driver.sh
 chmod +x /tmp/install_event_driver.sh
 echo "To build your workspace run (without sudo)"
 echo "/tmp/install_event_driver.sh"
